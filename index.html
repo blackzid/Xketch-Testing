@@ -85,6 +85,7 @@ window.fbAsyncInit = function() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
+
       document.getElementById('status').innerHTML =
       'Thanks for logging in, ' + response.name + '!';
   });
@@ -97,10 +98,8 @@ window.fbAsyncInit = function() {
 <!-- Button for login to Facebook -->
 <div id="my-html-playground" class="container">
     <div id="my-login-control" class="well">
-        <button id="my-login-button" class="btn btn-primary">Login with Facebook</button>
         <p id="my-login-message"></p>
-        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+        <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 
     </div>
 
