@@ -63,7 +63,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       console.log(JSON.stringify(response));
-      saveParseUser(response);
+      findParseUser(response);
       document.getElementById('my-profile-name').innerHTML = response.name;
               // 'Thanks for logging in, ' + response.name + '!';
           });
@@ -78,7 +78,25 @@
             console.log(str+'\n');
         }
     }
-
+    function findParseUser(response){
+        var TestUser = Parse.Object.extend("TestUser");
+        var query = new Parse.Query(TestUser);
+        query.equalTo("facebookID",response.id);
+        query.find({
+          success: function(results) {
+            alert("Successfully retrieved " + results.length + " scores.");
+            for (var i = 0; i < results.length; i++) {
+              var object = results[i];
+              alert(object.id + ' - ' + object.get('name'));
+            }
+          },
+          error: function(error) {
+            if(error.code== 101)
+                console.log('not found');
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+    }
     function saveParseUser(response){
         var TestUser = Parse.Object.extend("TestUser");
         var user = new TestUser();
