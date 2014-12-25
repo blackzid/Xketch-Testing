@@ -85,10 +85,11 @@
         var user = new TestUser();
         user.save({
           name: response.name,
-          facebookID: response.facebookID
+          facebookID: response.id
       }, {
           success: function(user) {
             console.log("success");
+            alert('facebookid ' + response.id);
           },
           error: function(user, error) {
             console.log("error:"+error);
