@@ -63,6 +63,7 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       console.log(JSON.stringify(response));
+      getParameter();
       findParseUser(response);
       document.getElementById('my-profile-name').innerHTML = response.name;
               // 'Thanks for logging in, ' + response.name + '!';
@@ -105,8 +106,7 @@
           facebookID: response.id
       }, {
           success: function(user) {
-            console.log("success");
-            alert('facebookid ' + response.id);
+            alert('saveing user success facebookid ' + response.id);
           },
           error: function(user, error) {
             console.log("error:"+error);
