@@ -19,33 +19,31 @@
     console.log('statusChangeCallback');
     console.log(response);
     if (response.status === 'connected') {
-      // Logged into your app and Facebook.
-      testAPI();
-  } else if (response.status === 'not_authorized') {
-      // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-      'into this app.';
-  } else {
-      document.getElementById('status').innerHTML = 'Please log ' +
-      'into Facebook.';
-  }
-}
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-  });
-}
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '393710607445470',
-      xfbml      : true,
-      version    : 'v2.2'
-    });
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });
+        testAPI();
+    } else if (response.status === 'not_authorized') {
+        document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+        document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+    }
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+      });
+    }
+    window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '393710607445470',
+          xfbml      : true,
+          version    : 'v2.2'
+      });
+        FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+        });
 
-};
+    };
 
   // Load the SDK asynchronously
   (function(d, s, id) {
@@ -56,17 +54,42 @@ window.fbAsyncInit = function() {
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
-  // Here we run a very simple test of the Graph API after login is
-  // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
+    function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
 
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       console.log(JSON.stringify(response));
+      getParameter();
       document.getElementById('my-profile-name').innerHTML = response.name;
-      // 'Thanks for logging in, ' + response.name + '!';
-  });
+              // 'Thanks for logging in, ' + response.name + '!';
+          });
+    }
+    function getParameter(){
+        var url = window.location.toString();
+        var str = "";
+
+        if (url.indexOf("?") != -1) {
+            var str=url.split("?")[1];
+            console.log(str+'\n');
+        }
+    }
+    function ParseUser (){
+        var testUser = Parse.Object.extend("TestUser");
+        var user = new testUser();
+        user.save({
+          Name: "blackzid",
+          // playerName: "Sean Plott",
+          // cheatMode: false
+      }, {
+          success: function(user) {
+            console.log("success");
+          },
+          error: function(user, error) {
+            console.log("error:"+error);
+          }
+      });
+    }
 }
 </script>
 <!-- ENDBLOCK: FB SDK initialization -->
