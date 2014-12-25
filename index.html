@@ -85,14 +85,14 @@
         query.find({
           success: function(results) {
             alert("Successfully retrieved " + results.length + " scores.");
+            if(results.length == 0)
+                saveParseUser(response);
             for (var i = 0; i < results.length; i++) {
               var object = results[i];
               alert(object.id + ' - ' + object.get('name'));
             }
           },
           error: function(error) {
-            if(error.code== 101)
-                console.log('not found');
             alert("Error: " + error.code + " " + error.message);
           }
         });
