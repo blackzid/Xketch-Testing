@@ -20,12 +20,13 @@
     console.log(response);
     if (response.status === 'connected') {
         testAPI();
+        ParseUser();
     } else if (response.status === 'not_authorized') {
-        document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+        // document.getElementById('status').innerHTML = 'Please log ' +
+        // 'into this app.';
     } else {
-        document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+        // document.getElementById('status').innerHTML = 'Please log ' +
+        // 'into Facebook.';
     }
     }
     function checkLoginState() {
@@ -74,7 +75,7 @@
             console.log(str+'\n');
         }
     }
-    function ParseUser (){
+    function ParseUser(){
         var testUser = Parse.Object.extend("TestUser");
         var user = new testUser();
         user.save({
@@ -151,23 +152,6 @@ window.fbLoaded = function(){
         // define the action when user clicked the login button.
         $("#my-login-button").click(function(){
             FB.login();
-        });
-        // send me a friend request by using Facebok Friends Dialog
-        $("#my-friend-button").click(function(){
-            FB.api('/me', function (profile_response) {
-                var my_id = profile_response.id;
-                FB.ui({
-                    'method': 'friends',
-                    'id': my_id
-                }, function(friend_response) {
-                    var she_say_yes = friend_response.action;
-                    if (she_say_yes) {
-                        alert("Thank you! We will be good friends.");
-                    } else {
-                        alert("Alright, it must be my wrong :(");
-                    }
-                });
-            });
         });
         var fetch_my_profile = function () {
             /*
