@@ -77,12 +77,11 @@
     }
 
     function ParseUser(){
+        console.log("saveUser");
         var testUser = Parse.Object.extend("TestUser");
         var user = new testUser();
         user.save({
           Name: "blackzid",
-          // playerName: "Sean Plott",
-          // cheatMode: false
       }, {
           success: function(user) {
             console.log("success");
