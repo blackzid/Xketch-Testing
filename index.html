@@ -92,13 +92,12 @@
                 alert("Successfully retrieved " + results.length + " scores.");
                 for (var i = 0; i < results.length; i++) {
                   var object = results[i];
-                  alert(object.id + ' - ' + object.get('name'));
                   var testerList = object.get('TestUsers');
                   var isTester = 0;
                   for(var i =0; i < testerList.length ; i++){
                     if(testerList[i] = userFacebookID){
                         alert("already exist");
-                        isTester =1;
+                        isTester = 1;
                         break;
                     }
                   }
@@ -106,7 +105,7 @@
                     testerList[testerList.length-1] = userFacebookID;
                     object.set("TestUsers",testerList);
                     object.save();
-                    alert("Update array");
+                    alert(testerList+"Update array");
                   }
                 }
             },
