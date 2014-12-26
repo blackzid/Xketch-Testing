@@ -95,7 +95,8 @@
                   var testerList = object.get('TestUsers');
                   var isTester = 0;
                   for(var i =0; i < testerList.length ; i++){
-                    if(testerList[i] = userFacebookID){
+                    console.log(testerList[i]+"  "+userFacebookID);
+                    if(testerList[i] = userFacebookID){ 
                         alert("Already in "+object.get('ProjectName'));
                         isTester = 1;
                         break;
