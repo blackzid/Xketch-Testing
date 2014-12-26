@@ -78,7 +78,7 @@
 
         if (url.indexOf("?") != -1) {
             var str=url.split("?")[1];
-            console.log("A"+str+"A"+'\n');
+            console.log(str+'\n');
         }   
         addUserToTesterList(str);
 
@@ -86,7 +86,7 @@
     function addUserToTesterList(objectid){
         var Project = Parse.Object.extend("XMLFile");
         var query = new Parse.Query(Project);
-        query.equalTo("objectid",objectid);
+        query.equalTo("objectId",objectid);
         query.find({
             success: function(results){
                 alert("Successfully retrieved " + results.length + " scores.");
