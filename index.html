@@ -16,7 +16,8 @@
     <div id="fb-root"></div>
     <script>
     Parse.initialize("AlRQDPdp00oyrwQfkvM5o1Dtes2tx26KLtNOLUvu", "w0STHGHcaw5POX5g5CEYb7k3isNaTs6cW7yury0v");
-
+    var userName;
+    var userFacebookID;
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
@@ -63,55 +64,90 @@
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
       console.log(JSON.stringify(response));
-      getParameter();
-      findParseUser(response);
+      userName = response.name;
+      userFacebookID = response.id;
+      getTokenFromParse();
       document.getElementById('my-profile-name').innerHTML = response.name;
               // 'Thanks for logging in, ' + response.name + '!';
           });
     }
 
-    function getParameter(){
+    function getTokenFromParse(){
         var url = window.location.toString();
         var str = "";
 
         if (url.indexOf("?") != -1) {
             var str=url.split("?")[1];
             console.log(str+'\n');
-        }
+        }   
+        addUserToTesterList(str);
+
     }
-    function findParseUser(response){
-        var TestUser = Parse.Object.extend("TestUser");
-        var query = new Parse.Query(TestUser);
-        query.equalTo("facebookID",response.id);
+    function addUserToTesterList(objectid){
+        var Project = Parse.Object.extend("XMLFile");
+        var query = new Parse.Query(Project);
+        query.equalTo("objectid",objectid);
         query.find({
-          success: function(results) {
-            alert("Successfully retrieved " + results.length + " scores.");
-            if(results.length == 0)
-                saveParseUser(response);
-            for (var i = 0; i < results.length; i++) {
-              var object = results[i];
-              alert(object.id + ' - ' + object.get('name'));
+            success: function(results){
+                alert("Successfully retrieved " + results.length + " scores.");
+                for (var i = 0; i < results.length; i++) {
+                  var object = results[i];
+                  alert(object.id + ' - ' + object.get('name'));
+                  var testerList = object.get('TestUsers');
+                  var isTester = 0;
+                  for(var i =0; i < testerList.length ; i++){
+                    if(testerList[i] = userFacebookID){
+                        alert("already exist");
+                        isTester =1;
+                        break;
+                    }
+                  }
+                  if(isTester == 0){
+                    testerList[testerList.length-1] = userFacebookID;
+                    object.set("TestUsers",testerList);
+                    object.save();
+                    alert("Update array");
+                  }
+                }
+            },
+            error: function(error){
+                alert("Error: " + error.code + " " + error.message);
             }
-          },
-          error: function(error) {
-            alert("Error: " + error.code + " " + error.message);
-          }
         });
     }
-    function saveParseUser(response){
-        var TestUser = Parse.Object.extend("TestUser");
-        var user = new TestUser();
-        user.save({
-          name: response.name,
-          facebookID: response.id
-      }, {
-          success: function(user) {
-            alert('saveing user success facebookid ' + response.id);
-          },
-          error: function(user, error) {
-            console.log("error:"+error);
-          }
-      });
+    // function findParseUser(response){
+    //     var TestUser = Parse.Object.extend("TestUser");
+    //     var query = new Parse.Query(TestUser);
+    //     query.equalTo("facebookID",response.id);
+    //     query.find({
+    //       success: function(results) {
+    //         alert("Successfully retrieved " + results.length + " scores.");
+    //         if(results.length == 0)
+    //             saveParseUser(response);
+    //         for (var i = 0; i < results.length; i++) {
+    //           var object = results[i];
+    //           alert(object.id + ' - ' + object.get('name'));
+    //         }
+    //       },
+    //       error: function(error) {
+    //         alert("Error: " + error.code + " " + error.message);
+    //       }
+    //     });
+    // }
+    // function saveParseUser(response){
+    //     var TestUser = Parse.Object.extend("TestUser");
+    //     var user = new TestUser();
+    //     user.save({
+    //       name: response.name,
+    //       facebookID: response.id
+    //   }, {
+    //       success: function(user) {
+    //         alert('saveing user success facebookid ' + response.id);
+    //       },
+    //       error: function(user, error) {
+    //         console.log("error:"+error);
+    //       }
+    //   });
     }
 </script>
 <!-- ENDBLOCK: FB SDK initialization -->
