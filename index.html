@@ -78,10 +78,9 @@
 
         if (url.indexOf("?") != -1) {
             var str=url.split("?")[1];
-            console.log(str+'\n');
+            console.log("A"+str+"A"+'\n');
         }   
-        addUserToTesterList("A"+str+"A");
-
+        addUserToTesterList(str);
     }
     function addUserToTesterList(objectid){
         var Project = Parse.Object.extend("XMLFile");
