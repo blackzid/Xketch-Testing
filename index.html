@@ -102,7 +102,7 @@
                     }
                   }
                   if(isTester == 0){
-                    testerList[testerList.length-1] = userFacebookID;
+                    testerList[testerList.length] = userFacebookID;
                     object.set("TestUsers",testerList);
                     object.save();
                     alert(testerList+"Update array");
