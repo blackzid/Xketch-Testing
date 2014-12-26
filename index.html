@@ -96,7 +96,7 @@
                   var isTester = 0;
                   for(var i =0; i < testerList.length ; i++){
                     if(testerList[i] = userFacebookID){
-                        alert("already exist");
+                        alert("Already in "+object.get('ProjectName'));
                         isTester = 1;
                         break;
                     }
@@ -105,7 +105,7 @@
                     testerList[testerList.length] = userFacebookID;
                     object.set("TestUsers",testerList);
                     object.save();
-                    alert(testerList+"Update array");
+                    alert("Join to Project"+object.get('ProjectName')+ "success");
                   }
                 }
             },
