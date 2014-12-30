@@ -16,27 +16,6 @@
     <div id="fb-root"></div>
     <script>
     Parse.initialize("AlRQDPdp00oyrwQfkvM5o1Dtes2tx26KLtNOLUvu", "w0STHGHcaw5POX5g5CEYb7k3isNaTs6cW7yury0v");
-    var userName;
-    var userFacebookID;
-    function statusChangeCallback(response) {
-        console.log('statusChangeCallback');
-        console.log(response);
-        if (response.status === 'connected') {
-            testAPI();
-            
-        } else if (response.status === 'not_authorized') {
-            document.getElementById('status').innerHTML = 'Please log ' +
-            'into this app.';
-        } else {
-            document.getElementById('status').innerHTML = 'Please log ' +
-            'into Facebook.';
-        }
-    }
-    function checkLoginState() {
-        FB.getLoginStatus(function(response) {
-          statusChangeCallback(response);
-      });
-    }
     window.fbAsyncInit = function() {
         FB.init({
           appId      : '393710607445470',
@@ -49,72 +28,37 @@
 
     };
 
+    function statusChangeCallback(response) {
+        console.log('statusChangeCallback');
+        console.log(response);
+        if (response.status === 'connected') {
+            testAPI();
+            
+        } else if (response.status === 'not_authorized') {
+
+        } else {
+
+        }
+    }
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+          statusChangeCallback(response);
+      });
+    }
+
   // Load the SDK asynchronously
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
     function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      console.log(JSON.stringify(response));
-      userName = response.name;
-      userFacebookID = response.id;
-      getTokenFromParse();
-      document.getElementById('my-profile-name').innerHTML = response.name;
-              // 'Thanks for logging in, ' + response.name + '!';
-          });
     }
 
-    function getTokenFromParse(){
-        var url = window.location.toString();
-        var str = "";
-
-        if (url.indexOf("?") != -1) {
-            var str=url.split("?")[1];
-            console.log(str+'\n');
-        }   
-        addUserToTesterList(str);
-
-    }
-    function addUserToTesterList(objectid){
-        var Project = Parse.Object.extend("XMLFile");
-        var query = new Parse.Query(Project);
-        query.equalTo("objectId",objectid);
-        query.find({
-            success: function(results){
-                alert("Successfully retrieved " + results.length + " scores.");
-                for (var i = 0; i < results.length; i++) {
-                  var object = results[i];
-                  var testerList = object.get('TestUsers');
-                  var isTester = 0;
-                  for(var i =0; i < testerList.length ; i++){
-                    console.log(testerList[i]+"  "+userFacebookID);
-                    if(testerList[i]== userFacebookID){ 
-                        alert("Already in "+object.get('ProjectName'));
-                        isTester = 1;
-                        break;
-                    }
-                  }
-                  if(isTester == 0){
-                    testerList[testerList.length] = userFacebookID;
-                    object.set("TestUsers",testerList);
-                    object.save();
-                    alert("Join to Project "+object.get('ProjectName')+ " success");
-                  }
-                }
-            },
-            error: function(error){
-                alert("Error: " + error.code + " " + error.message);
-            }
-        });
-    }
 </script>
 <!-- ENDBLOCK: FB SDK initialization -->
 
@@ -125,7 +69,7 @@
     <h1 align="center">Please Login Your FB</h1>
     <div id="my-login-control" align="center">
         <p id="my-login-message"></p>
-        <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+        <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
     </div>
     <!-- Profile Area -->
 
@@ -145,69 +89,79 @@
 
 <!-- BLOCK: Your script playground -->
 <script id="my-script-playground">
+var userName;
+var userFacebookID;
 window.fbLoaded = function(){
-        // define the events when login status changed.
-        FB.Event.subscribe('auth.login', function(response) {
-            // when user has been logged in, this block will be triggered.
-            var msg = "You're logged in.";
-            $("#my-login-message").html(msg);
-            console.log("Your login response:");
-            console.log(response);
-            fetch_my_profile();
+    // define the events when login status changed.
+    FB.Event.subscribe('auth.login', function(response) {
+        // when user has been logged in, this block will be triggered.
+        var msg = "You're logged in.";
+        $("#my-login-message").html(msg);
+        console.log("Your login response:");
+        console.log(response);
+        fetch_my_profile();
+    });
+    // define the action when user clicked the login button.
+    $("#my-login-button").click(function(){
+        FB.login();
+    });
+    // send me a friend request by using Facebok Friends Dialog
+    var fetch_my_profile = function () {
+        FB.api('/me', function(response) {
+          console.log('Successful login for: ' + response.name);
+          console.log(JSON.stringify(response));
+          userName = response.name;
+          userFacebookID = response.id;
+          getTokenFromParse();
+          document.getElementById('my-profile-name').innerHTML = response.name;
+                  // 'Thanks for logging in, ' + response.name + '!';
         });
-        // define the action when user clicked the login button.
-        $("#my-login-button").click(function(){
-            FB.login();
-        });
-        // send me a friend request by using Facebok Friends Dialog
-        $("#my-friend-button").click(function(){
-            FB.api('/me', function (profile_response) {
-                var my_id = profile_response.id;
-                FB.ui({
-                    'method': 'friends',
-                    'id': my_id
-                }, function(friend_response) {
-                    var she_say_yes = friend_response.action;
-                    if (she_say_yes) {
-                        alert("Thank you! We will be good friends.");
-                    } else {
-                        alert("Alright, it must be my wrong :(");
-                    }
-                });
-            });
-        });
-        var fetch_my_profile = function () {
-            /*
-            Fetching profile information.
-            For more detail, please vist the following url:
-            (Graph API: User documentation)
-            https://developers.facebook.com/docs/graph-api/reference/user/
-            */
-            FB.api('/me', function(response) {
-                var my_name = response.name;
-                var my_gender = response.gender;
-                var my_username = response.username;
-                var my_facebook_id = response.id;
-                $("#my-profile-name").html(my_name);
-                $("#my-profile-gender").html(my_gender);
-                $("#my-profile-username").html(my_username);
-                $("#my-profile-facebook-id").html(my_facebook_id);
-            });
-            /*
-            Fetching profile picture from Facebook.
-            For more detail, please visit the following url:
-            (Graph API: User/Picture reference)
-            https://developers.facebook.com/docs/graph-api/reference/user/picture/
-            */
-            FB.api('/me/picture?width=250', function(response) {
-                var my_picture_url = response.data.url;
-
-                $("#my-profile-picture").attr('src', my_picture_url);
-            });
-        };
     };
-    </script>
-    <!-- ENDBLOCK: Your script playground -->
+};
+function getTokenFromParse(){
+        var url = window.location.toString();
+        var str = "";
 
+        if (url.indexOf("?") != -1) {
+            var str=url.split("?")[1];
+            console.log(str+'\n');
+        }   
+        addUserToTesterList(str);
+
+    }
+function addUserToTesterList(objectid){
+    var Project = Parse.Object.extend("XMLFile");
+    var query = new Parse.Query(Project);
+    query.equalTo("objectId",objectid);
+    query.find({
+        success: function(results){
+            alert("Successfully retrieved " + results.length + " scores.");
+            for (var i = 0; i < results.length; i++) {
+              var object = results[i];
+              var testerList = object.get('TestUsers');
+              var isTester = 0;
+              for(var i =0; i < testerList.length ; i++){
+                console.log(testerList[i]+"  "+userFacebookID);
+                if(testerList[i]== userFacebookID){ 
+                    alert("Already in "+object.get('ProjectName'));
+                    isTester = 1;
+                    break;
+                }
+              }
+              if(isTester == 0){
+                testerList[testerList.length] = userFacebookID;
+                object.set("TestUsers",testerList);
+                object.save();
+                alert("Join to Project "+object.get('ProjectName')+ " success");
+              }
+            }
+        },
+        error: function(error){
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+}
+</script>
+    <!-- ENDBLOCK: Your script playground -->
 </body>
 </html>
