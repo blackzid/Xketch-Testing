@@ -115,40 +115,6 @@
             }
         });
     }
-    // function findParseUser(response){
-    //     var TestUser = Parse.Object.extend("TestUser");
-    //     var query = new Parse.Query(TestUser);
-    //     query.equalTo("facebookID",response.id);
-    //     query.find({
-    //       success: function(results) {
-    //         alert("Successfully retrieved " + results.length + " scores.");
-    //         if(results.length == 0)
-    //             saveParseUser(response);
-    //         for (var i = 0; i < results.length; i++) {
-    //           var object = results[i];
-    //           alert(object.id + ' - ' + object.get('name'));
-    //         }
-    //       },
-    //       error: function(error) {
-    //         alert("Error: " + error.code + " " + error.message);
-    //       }
-    //     });
-    // }
-    // function saveParseUser(response){
-    //     var TestUser = Parse.Object.extend("TestUser");
-    //     var user = new TestUser();
-    //     user.save({
-    //       name: response.name,
-    //       facebookID: response.id
-    //   }, {
-    //       success: function(user) {
-    //         alert('saveing user success facebookid ' + response.id);
-    //       },
-    //       error: function(user, error) {
-    //         console.log("error:"+error);
-    //       }
-    //   });
-    // }
 </script>
 <!-- ENDBLOCK: FB SDK initialization -->
 
@@ -157,29 +123,18 @@
 <!-- Button for login to Facebook -->
 <div id="my-html-playground" class="container">
     <h1 align="center">Please Login Your FB</h1>
-    <div align="center">
-    <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" ></div>
+    <div id="my-login-control" class="well" align="center">
+        <p id="my-login-message"></p>
+        <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
     </div>
     <!-- Profile Area -->
 
-    <div id="my-profile" class="row">
+    <div id="my-profile" class="row" align="center">
         <div class="col-md-9">
             <!-- Profile Information -->
             <dl class="dl-horizontal">
                 <dt>Name</dt>
                 <dd id="my-profile-name"></dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt>Gender</dt>
-                <dd id="my-profile-gender"></dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt>Username</dt>
-                <dd id="my-profile-username"></dd>
-            </dl>
-            <dl class="dl-horizontal">
-                <dt>Facebook ID</dt>
-                <dd id="my-profile-facebook-id"></dd>
             </dl>
         </div>
     </div>
