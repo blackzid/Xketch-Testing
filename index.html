@@ -57,8 +57,59 @@
 
     function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+          console.log('Successful login for: ' + response.name);
+          console.log(JSON.stringify(response));
+          userName = response.name;
+          userFacebookID = response.id;
+          getTokenFromParse();
+          document.getElementById('my-profile-name').innerHTML = response.name;
+                  // 'Thanks for logging in, ' + response.name + '!';
+        });
     }
+    function getTokenFromParse(){
+        var url = window.location.toString();
+        var str = "";
 
+        if (url.indexOf("?") != -1) {
+            var str=url.split("?")[1];
+            console.log(str+'\n');
+        }
+        addUserToTesterList(str);
+
+    }
+function addUserToTesterList(objectid){
+    var Project = Parse.Object.extend("XMLFile");
+    var query = new Parse.Query(Project);
+    query.equalTo("objectId",objectid);
+    query.find({
+        success: function(results){
+            alert("Successfully retrieved " + results.length + " scores.");
+            for (var i = 0; i < results.length; i++) {
+              var object = results[i];
+              var testerList = object.get('TestUsers');
+              var isTester = 0;
+              for(var i =0; i < testerList.length ; i++){
+                console.log(testerList[i]+"  "+userFacebookID);
+                if(testerList[i]== userFacebookID){ 
+                    alert("Already in "+object.get('ProjectName'));
+                    isTester = 1;
+                    break;
+                }
+              }
+              if(isTester == 0){
+                testerList[testerList.length] = userFacebookID;
+                object.set("TestUsers",testerList);
+                object.save();
+                alert("Join to Project "+object.get('ProjectName')+ " success");
+              }
+            }
+        },
+        error: function(error){
+            alert("Error: " + error.code + " " + error.message);
+        }
+    });
+}
 </script>
 <!-- ENDBLOCK: FB SDK initialization -->
 
@@ -108,60 +159,10 @@ window.fbLoaded = function(){
     // send me a friend request by using Facebok Friends Dialog
     var fetch_my_profile = function () {
         console.log('hellohello');
-        FB.api('/me', function(response) {
-          console.log('Successful login for: ' + response.name);
-          console.log(JSON.stringify(response));
-          userName = response.name;
-          userFacebookID = response.id;
-          getTokenFromParse();
-          document.getElementById('my-profile-name').innerHTML = response.name;
-                  // 'Thanks for logging in, ' + response.name + '!';
-        });
+
     };
 };
-function getTokenFromParse(){
-        var url = window.location.toString();
-        var str = "";
 
-        if (url.indexOf("?") != -1) {
-            var str=url.split("?")[1];
-            console.log(str+'\n');
-        }
-        addUserToTesterList(str);
-
-    }
-function addUserToTesterList(objectid){
-    var Project = Parse.Object.extend("XMLFile");
-    var query = new Parse.Query(Project);
-    query.equalTo("objectId",objectid);
-    query.find({
-        success: function(results){
-            alert("Successfully retrieved " + results.length + " scores.");
-            for (var i = 0; i < results.length; i++) {
-              var object = results[i];
-              var testerList = object.get('TestUsers');
-              var isTester = 0;
-              for(var i =0; i < testerList.length ; i++){
-                console.log(testerList[i]+"  "+userFacebookID);
-                if(testerList[i]== userFacebookID){ 
-                    alert("Already in "+object.get('ProjectName'));
-                    isTester = 1;
-                    break;
-                }
-              }
-              if(isTester == 0){
-                testerList[testerList.length] = userFacebookID;
-                object.set("TestUsers",testerList);
-                object.save();
-                alert("Join to Project "+object.get('ProjectName')+ " success");
-              }
-            }
-        },
-        error: function(error){
-            alert("Error: " + error.code + " " + error.message);
-        }
-    });
-}
 </script>
     <!-- ENDBLOCK: Your script playground -->
 </body>
