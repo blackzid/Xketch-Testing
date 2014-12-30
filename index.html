@@ -107,6 +107,7 @@ window.fbLoaded = function(){
     });
     // send me a friend request by using Facebok Friends Dialog
     var fetch_my_profile = function () {
+        console.log('hellohello');
         FB.api('/me', function(response) {
           console.log('Successful login for: ' + response.name);
           console.log(JSON.stringify(response));
@@ -125,7 +126,7 @@ function getTokenFromParse(){
         if (url.indexOf("?") != -1) {
             var str=url.split("?")[1];
             console.log(str+'\n');
-        }   
+        }
         addUserToTesterList(str);
 
     }
