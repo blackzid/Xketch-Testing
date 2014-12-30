@@ -16,6 +16,8 @@
     <div id="fb-root"></div>
     <script>
     Parse.initialize("AlRQDPdp00oyrwQfkvM5o1Dtes2tx26KLtNOLUvu", "w0STHGHcaw5POX5g5CEYb7k3isNaTs6cW7yury0v");
+    var userName;
+var userFacebookID;
     window.fbAsyncInit = function() {
         FB.init({
           appId      : '393710607445470',
@@ -140,8 +142,7 @@ function addUserToTesterList(objectid){
 
 <!-- BLOCK: Your script playground -->
 <script id="my-script-playground">
-var userName;
-var userFacebookID;
+
 window.fbLoaded = function(){
     // define the events when login status changed.
     FB.Event.subscribe('auth.login', function(response) {
