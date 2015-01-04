@@ -27,7 +27,10 @@ var userFacebookID;
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
         });
-
+        FB.logout(function(response) {
+        alert("1111");
+        clean();
+           });
     };
 
     function statusChangeCallback(response) {
@@ -64,7 +67,6 @@ var userFacebookID;
           userFacebookID = response.id;
           getTokenFromParse();
           document.getElementById('my-profile-name').innerHTML = "Welcome!" + response.name;
-                  // 'Thanks for logging in, ' + response.name + '!';
         });
     }
     function clean(){
@@ -81,38 +83,38 @@ var userFacebookID;
         addUserToTesterList(str);
 
     }
-function addUserToTesterList(objectid){
-    var Project = Parse.Object.extend("XMLFile");
-    var query = new Parse.Query(Project);
-    query.equalTo("objectId",objectid);
-    query.find({
-        success: function(results){
-            // alert("Successfully retrieved " + results.length + " scores.");
-            for (var i = 0; i < results.length; i++) {
-              var object = results[i];
-              var testerList = object.get('TestUsers');
-              var isTester = 0;
-              for(var i =0; i < testerList.length ; i++){
-                console.log(testerList[i]+"  "+userFacebookID);
-                if(testerList[i]== userFacebookID){ 
-                    alert("Already in "+object.get('ProjectName'));
-                    isTester = 1;
-                    break;
+    function addUserToTesterList(objectid){
+        var Project = Parse.Object.extend("XMLFile");
+        var query = new Parse.Query(Project);
+        query.equalTo("objectId",objectid);
+        query.find({
+            success: function(results){
+                // alert("Successfully retrieved " + results.length + " scores.");
+                for (var i = 0; i < results.length; i++) {
+                  var object = results[i];
+                  var testerList = object.get('TestUsers');
+                  var isTester = 0;
+                  for(var i =0; i < testerList.length ; i++){
+                    console.log(testerList[i]+"  "+userFacebookID);
+                    if(testerList[i]== userFacebookID){ 
+                        alert("Already in "+object.get('ProjectName'));
+                        isTester = 1;
+                        break;
+                    }
+                  }
+                  if(isTester == 0){
+                    testerList[testerList.length] = userFacebookID;
+                    object.set("TestUsers",testerList);
+                    object.save();
+                    alert("Join to Project "+object.get('ProjectName')+ " success");
+                  }
                 }
-              }
-              if(isTester == 0){
-                testerList[testerList.length] = userFacebookID;
-                object.set("TestUsers",testerList);
-                object.save();
-                alert("Join to Project "+object.get('ProjectName')+ " success");
-              }
+            },
+            error: function(error){
+                alert("Error: " + error.code + " " + error.message);
             }
-        },
-        error: function(error){
-            alert("Error: " + error.code + " " + error.message);
-        }
-    });
-}
+        });
+    }
 </script>
 <!-- ENDBLOCK: FB SDK initialization -->
 
@@ -136,14 +138,6 @@ function addUserToTesterList(objectid){
         </dl> -->
     </div>
 </div> 
-<!--     <div id="my-profile" class="row" >
-        <div class="col-md-9">
-            <dl  class="dl-horizontal" >
-                <dt>User Name:</dt>
-                <dd id="my-profile-name"></dd>
-            </dl>
-        </div>
-    </div> -->
 <!-- ENDBLOCK: Your playground -->
 
 <!-- BLOCK: Your script playground -->
