@@ -36,10 +36,8 @@ var userFacebookID;
         if (response.status === 'connected') {
             testAPI();
             
-        } else if (response.status === 'not_authorized') {
-
         } else {
-
+            clean();
         }
     }
     function checkLoginState() {
@@ -59,15 +57,18 @@ var userFacebookID;
 
     function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
-            FB.api('/me', function(response) {
+        FB.api('/me', function(response) {
           console.log('Successful login for: ' + response.name);
           console.log(JSON.stringify(response));
           userName = response.name;
           userFacebookID = response.id;
           getTokenFromParse();
-          document.getElementById('my-profile-name').innerHTML = response.name;
+          document.getElementById('my-profile-name').innerHTML = "Welcome!" + response.name;
                   // 'Thanks for logging in, ' + response.name + '!';
         });
+    }
+    function clean(){
+        document.getElementById('my-profile-name').innerHTML = "";
     }
     function getTokenFromParse(){
         var url = window.location.toString();
@@ -86,7 +87,7 @@ function addUserToTesterList(objectid){
     query.equalTo("objectId",objectid);
     query.find({
         success: function(results){
-            alert("Successfully retrieved " + results.length + " scores.");
+            // alert("Successfully retrieved " + results.length + " scores.");
             for (var i = 0; i < results.length; i++) {
               var object = results[i];
               var testerList = object.get('TestUsers');
@@ -119,25 +120,30 @@ function addUserToTesterList(objectid){
 
 <!-- Button for login to Facebook -->
 <div id="my-html-playground" class="container">
-    <h1 align="center">Please Login Your FB</h1>
+    <h1 align="center">Please Login Your Facebook</h1>
     <div id="my-login-control" align="center">
         <p id="my-login-message"></p>
         <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
     </div>
     <!-- Profile Area -->
-
-    <div id="my-profile" class="row" align="center">
+</div>
+<div id="my-profile" class="row" >
+    <div align = "center">
+        <p style="font-size:20px" id = "my-profile-name"></p>
+<!--         <dl >
+            <dt style="font-size:20px" >Welcome!</dt>
+            <dd  style="font-size:16px" id="my-profile-name">aaa</dd>
+        </dl> -->
+    </div>
+</div> 
+<!--     <div id="my-profile" class="row" >
         <div class="col-md-9">
-            <!-- Profile Information -->
-            <dl class="dl-horizontal">
-                <dt>Name</dt>
+            <dl  class="dl-horizontal" >
+                <dt>User Name:</dt>
                 <dd id="my-profile-name"></dd>
             </dl>
         </div>
-    </div>
-
-</div>
-
+    </div> -->
 <!-- ENDBLOCK: Your playground -->
 
 <!-- BLOCK: Your script playground -->
@@ -160,7 +166,6 @@ window.fbLoaded = function(){
         FB.login();
     });
     // send me a friend request by using Facebok Friends Dialog
-≈
 </script>
     <!-- ENDBLOCK: Your script playground -->
 </body>
