@@ -27,20 +27,40 @@ var userFacebookID;
         FB.getLoginStatus(function(response) {
             statusChangeCallback(response);
         });
-        FB.logout(function(response) {
-        alert("1111");
-        clean();
-           });
     };
-
+    function checkLoginState() {
+        alert("11234444");
+     FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+        });
+    }
+    // function fblogout(){     // facebook 登出
+    //     FB.getLoginStatus(
+    //         function (response){
+    //             if(response.status === ‘connected’){
+    //                 FB.logout(function(response){    //使用者已成功登出
+    //                     alert("成功登出。");
+    //                     localStorage.clear();
+    //                     location.replace( "放欲導回網站的URL" );
+    //                });
+    //             } else if(response.status === ‘not_authorized’){
+    //                 FB.logout(function (response) {     // 使用者已登出
+    //                      alert("請重新登入！");
+    //                 });
+    //     } else{    // 使用者沒有登入 Facebook
+    //         alert("請重新登入！");
+    //     }
+    //     });
+    // }
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log(response);
         if (response.status === 'connected') {
             testAPI();
-            
+            console.log("connected");
         } else {
             clean();
+            console.log("connected");
         }
     }
     function checkLoginState() {
@@ -115,6 +135,7 @@ var userFacebookID;
             }
         });
     }
+    
 </script>
 <!-- ENDBLOCK: FB SDK initialization -->
 
@@ -125,7 +146,7 @@ var userFacebookID;
     <h1 align="center">Please Login Your Facebook</h1>
     <div id="my-login-control" align="center">
         <p id="my-login-message"></p>
-        <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+        <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin="checkLoginState();"></div>
     </div>
     <!-- Profile Area -->
 </div>
