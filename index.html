@@ -28,12 +28,12 @@ var userFacebookID;
             statusChangeCallback(response);
         });
     };
-    function checkLoginState() {
-        alert("11234444");
-     FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-        });
-    }
+    // function checkLoginState() {
+    //     alert("11234444");
+    //  FB.getLoginStatus(function(response) {
+    //     statusChangeCallback(response);
+    //     });
+    // }
     // function fblogout(){     // facebook 登出
     //     FB.getLoginStatus(
     //         function (response){
@@ -90,6 +90,7 @@ var userFacebookID;
         });
     }
     function clean(){
+        console.log("clean");
         document.getElementById('my-profile-name').innerHTML = "";
     }
     function getTokenFromParse(){
