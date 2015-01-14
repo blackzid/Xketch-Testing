@@ -7,13 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		278611B48503433912C245D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 973A86C173C5CCE9B1BE5334 /* libPods.a */; };
 		E972E9D61A48433E00476949 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E9D51A48433E00476949 /* main.m */; };
 		E972E9D91A48433E00476949 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E9D81A48433E00476949 /* AppDelegate.m */; };
-		E972E9DC1A48433E00476949 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E9DB1A48433E00476949 /* ViewController.m */; };
 		E972E9DF1A48433E00476949 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E972E9DD1A48433E00476949 /* Main.storyboard */; };
 		E972E9E11A48433E00476949 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E972E9E01A48433E00476949 /* Images.xcassets */; };
 		E972E9E41A48433E00476949 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E972E9E21A48433E00476949 /* LaunchScreen.xib */; };
 		E972E9F01A48433E00476949 /* Xketch2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E9EF1A48433E00476949 /* Xketch2Tests.m */; };
+		E972EA0D1A4843B200476949 /* IQProjectVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E9FA1A4843B200476949 /* IQProjectVideo.m */; };
+		E972EA0E1A4843B200476949 /* LoadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E9FC1A4843B200476949 /* LoadFileViewController.m */; };
+		E972EA0F1A4843B200476949 /* OriginalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E972E9FE1A4843B200476949 /* OriginalViewController.m */; };
+		E972EA101A4843B200476949 /* PagingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EA001A4843B200476949 /* PagingScrollView.m */; };
+		E972EA111A4843B200476949 /* PickerViewWithTextArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EA021A4843B200476949 /* PickerViewWithTextArray.m */; };
+		E972EA121A4843B200476949 /* QTouchposeApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EA041A4843B200476949 /* QTouchposeApplication.m */; };
+		E972EA131A4843B200476949 /* RecordUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EA061A4843B200476949 /* RecordUtil.m */; };
+		E972EA141A4843B200476949 /* SegmentedControl+ImageVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EA081A4843B200476949 /* SegmentedControl+ImageVIew.m */; };
+		E972EA151A4843B200476949 /* TableViewWithTextArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EA0A1A4843B200476949 /* TableViewWithTextArray.m */; };
+		E972EA161A4843B200476949 /* XMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E972EA0C1A4843B200476949 /* XMLParser.m */; };
+		E972EA1B1A48442900476949 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA1A1A48442900476949 /* AudioToolbox.framework */; };
+		E972EA1D1A48443100476949 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA1C1A48443100476949 /* CFNetwork.framework */; };
+		E972EA1F1A48443A00476949 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA1E1A48443A00476949 /* MobileCoreServices.framework */; };
+		E972EA211A48444200476949 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA201A48444200476949 /* Security.framework */; };
+		E972EA231A48444B00476949 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA221A48444B00476949 /* SystemConfiguration.framework */; };
+		E972EA251A48445B00476949 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA241A48445B00476949 /* libz.dylib */; };
+		E972EA271A48446E00476949 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA261A48446E00476949 /* libsqlite3.dylib */; };
+		E972EA291A48447600476949 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA281A48447600476949 /* AVFoundation.framework */; };
+		E972EA2B1A48447D00476949 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA2A1A48447D00476949 /* CoreVideo.framework */; };
+		E972EA2D1A48448400476949 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA2C1A48448400476949 /* QuartzCore.framework */; };
+		E972EA2F1A48448F00476949 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA2E1A48448F00476949 /* MediaPlayer.framework */; };
+		E972EA331A4844BE00476949 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA321A4844BE00476949 /* Foundation.framework */; };
+		E972EA351A4844C600476949 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA341A4844C600476949 /* CoreGraphics.framework */; };
+		E972EA371A4844D000476949 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E972EA361A4844D000476949 /* CoreMedia.framework */; };
+		E97502281A4E7E3900F453DA /* FBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E97502271A4E7E3900F453DA /* FBLoginViewController.m */; };
+		E9A763941A4BB82800A143C3 /* PrototypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9A763931A4BB82800A143C3 /* PrototypeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +53,58 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6965C7163322B6A9301E6F64 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		973A86C173C5CCE9B1BE5334 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E620714651AF8779AB461479 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E972E9D01A48433E00476949 /* Xketch2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xketch2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E972E9D41A48433E00476949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E972E9D51A48433E00476949 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E972E9D71A48433E00476949 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E972E9D81A48433E00476949 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E972E9DA1A48433E00476949 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E972E9DB1A48433E00476949 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E972E9DE1A48433E00476949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E972E9E01A48433E00476949 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E972E9E31A48433E00476949 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E972E9E91A48433E00476949 /* Xketch2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Xketch2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E972E9EE1A48433E00476949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E972E9EF1A48433E00476949 /* Xketch2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Xketch2Tests.m; sourceTree = "<group>"; };
+		E972E9F91A4843B200476949 /* IQProjectVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IQProjectVideo.h; sourceTree = "<group>"; };
+		E972E9FA1A4843B200476949 /* IQProjectVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IQProjectVideo.m; sourceTree = "<group>"; };
+		E972E9FB1A4843B200476949 /* LoadFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadFileViewController.h; sourceTree = "<group>"; };
+		E972E9FC1A4843B200476949 /* LoadFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadFileViewController.m; sourceTree = "<group>"; };
+		E972E9FD1A4843B200476949 /* OriginalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriginalViewController.h; sourceTree = "<group>"; };
+		E972E9FE1A4843B200476949 /* OriginalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriginalViewController.m; sourceTree = "<group>"; };
+		E972E9FF1A4843B200476949 /* PagingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagingScrollView.h; sourceTree = "<group>"; };
+		E972EA001A4843B200476949 /* PagingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagingScrollView.m; sourceTree = "<group>"; };
+		E972EA011A4843B200476949 /* PickerViewWithTextArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewWithTextArray.h; sourceTree = "<group>"; };
+		E972EA021A4843B200476949 /* PickerViewWithTextArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewWithTextArray.m; sourceTree = "<group>"; };
+		E972EA031A4843B200476949 /* QTouchposeApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTouchposeApplication.h; sourceTree = "<group>"; };
+		E972EA041A4843B200476949 /* QTouchposeApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTouchposeApplication.m; sourceTree = "<group>"; };
+		E972EA051A4843B200476949 /* RecordUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordUtil.h; sourceTree = "<group>"; };
+		E972EA061A4843B200476949 /* RecordUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordUtil.m; sourceTree = "<group>"; };
+		E972EA071A4843B200476949 /* SegmentedControl+ImageVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SegmentedControl+ImageVIew.h"; sourceTree = "<group>"; };
+		E972EA081A4843B200476949 /* SegmentedControl+ImageVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SegmentedControl+ImageVIew.m"; sourceTree = "<group>"; };
+		E972EA091A4843B200476949 /* TableViewWithTextArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewWithTextArray.h; sourceTree = "<group>"; };
+		E972EA0A1A4843B200476949 /* TableViewWithTextArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewWithTextArray.m; sourceTree = "<group>"; };
+		E972EA0B1A4843B200476949 /* XMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParser.h; sourceTree = "<group>"; };
+		E972EA0C1A4843B200476949 /* XMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParser.m; sourceTree = "<group>"; };
+		E972EA1A1A48442900476949 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E972EA1C1A48443100476949 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E972EA1E1A48443A00476949 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E972EA201A48444200476949 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E972EA221A48444B00476949 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E972EA241A48445B00476949 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E972EA261A48446E00476949 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		E972EA281A48447600476949 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E972EA2A1A48447D00476949 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		E972EA2C1A48448400476949 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E972EA2E1A48448F00476949 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E972EA321A4844BE00476949 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E972EA341A4844C600476949 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E972EA361A4844D000476949 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		E97502261A4E7E3900F453DA /* FBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginViewController.h; sourceTree = "<group>"; };
+		E97502271A4E7E3900F453DA /* FBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBLoginViewController.m; sourceTree = "<group>"; };
+		E9A763921A4BB82800A143C3 /* PrototypeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrototypeTableViewCell.h; sourceTree = "<group>"; };
+		E9A763931A4BB82800A143C3 /* PrototypeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrototypeTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +112,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E972EA371A4844D000476949 /* CoreMedia.framework in Frameworks */,
+				E972EA351A4844C600476949 /* CoreGraphics.framework in Frameworks */,
+				E972EA331A4844BE00476949 /* Foundation.framework in Frameworks */,
+				E972EA2F1A48448F00476949 /* MediaPlayer.framework in Frameworks */,
+				E972EA2D1A48448400476949 /* QuartzCore.framework in Frameworks */,
+				E972EA2B1A48447D00476949 /* CoreVideo.framework in Frameworks */,
+				E972EA291A48447600476949 /* AVFoundation.framework in Frameworks */,
+				E972EA271A48446E00476949 /* libsqlite3.dylib in Frameworks */,
+				E972EA251A48445B00476949 /* libz.dylib in Frameworks */,
+				E972EA231A48444B00476949 /* SystemConfiguration.framework in Frameworks */,
+				E972EA211A48444200476949 /* Security.framework in Frameworks */,
+				E972EA1F1A48443A00476949 /* MobileCoreServices.framework in Frameworks */,
+				E972EA1D1A48443100476949 /* CFNetwork.framework in Frameworks */,
+				E972EA1B1A48442900476949 /* AudioToolbox.framework in Frameworks */,
+				278611B48503433912C245D8 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +140,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FF9C87036B62A9EC8A6FC1D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6965C7163322B6A9301E6F64 /* Pods.debug.xcconfig */,
+				E620714651AF8779AB461479 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E972E9C71A48433E00476949 = {
 			isa = PBXGroup;
 			children = (
 				E972E9D21A48433E00476949 /* Xketch2 */,
+				E972EA3C1A48452B00476949 /* Framework */,
 				E972E9EC1A48433E00476949 /* Xketch2Tests */,
 				E972E9D11A48433E00476949 /* Products */,
+				5FF9C87036B62A9EC8A6FC1D /* Pods */,
+				F1A8167149765EE89A9D811E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,11 +173,9 @@
 		E972E9D21A48433E00476949 /* Xketch2 */ = {
 			isa = PBXGroup;
 			children = (
-				E972E9D71A48433E00476949 /* AppDelegate.h */,
-				E972E9D81A48433E00476949 /* AppDelegate.m */,
-				E972E9DA1A48433E00476949 /* ViewController.h */,
-				E972E9DB1A48433E00476949 /* ViewController.m */,
-				E972E9DD1A48433E00476949 /* Main.storyboard */,
+				E972EA181A4843D500476949 /* model */,
+				E972EA191A4843E800476949 /* Controller */,
+				E972EA171A4843C100476949 /* view */,
 				E972E9E01A48433E00476949 /* Images.xcassets */,
 				E972E9E21A48433E00476949 /* LaunchScreen.xib */,
 				E972E9D31A48433E00476949 /* Supporting Files */,
@@ -96,6 +186,8 @@
 		E972E9D31A48433E00476949 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E972E9D71A48433E00476949 /* AppDelegate.h */,
+				E972E9D81A48433E00476949 /* AppDelegate.m */,
 				E972E9D41A48433E00476949 /* Info.plist */,
 				E972E9D51A48433E00476949 /* main.m */,
 			);
@@ -119,6 +211,81 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E972EA171A4843C100476949 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				E972E9DD1A48433E00476949 /* Main.storyboard */,
+				E972EA091A4843B200476949 /* TableViewWithTextArray.h */,
+				E972EA0A1A4843B200476949 /* TableViewWithTextArray.m */,
+				E972E9FF1A4843B200476949 /* PagingScrollView.h */,
+				E972EA001A4843B200476949 /* PagingScrollView.m */,
+				E972EA011A4843B200476949 /* PickerViewWithTextArray.h */,
+				E972EA021A4843B200476949 /* PickerViewWithTextArray.m */,
+				E972EA071A4843B200476949 /* SegmentedControl+ImageVIew.h */,
+				E972EA081A4843B200476949 /* SegmentedControl+ImageVIew.m */,
+				E9A763921A4BB82800A143C3 /* PrototypeTableViewCell.h */,
+				E9A763931A4BB82800A143C3 /* PrototypeTableViewCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		E972EA181A4843D500476949 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E972E9F91A4843B200476949 /* IQProjectVideo.h */,
+				E972E9FA1A4843B200476949 /* IQProjectVideo.m */,
+				E972EA031A4843B200476949 /* QTouchposeApplication.h */,
+				E972EA041A4843B200476949 /* QTouchposeApplication.m */,
+				E972EA051A4843B200476949 /* RecordUtil.h */,
+				E972EA061A4843B200476949 /* RecordUtil.m */,
+				E972EA0B1A4843B200476949 /* XMLParser.h */,
+				E972EA0C1A4843B200476949 /* XMLParser.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		E972EA191A4843E800476949 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E97502261A4E7E3900F453DA /* FBLoginViewController.h */,
+				E97502271A4E7E3900F453DA /* FBLoginViewController.m */,
+				E972E9FB1A4843B200476949 /* LoadFileViewController.h */,
+				E972E9FC1A4843B200476949 /* LoadFileViewController.m */,
+				E972E9FD1A4843B200476949 /* OriginalViewController.h */,
+				E972E9FE1A4843B200476949 /* OriginalViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E972EA3C1A48452B00476949 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				E972EA361A4844D000476949 /* CoreMedia.framework */,
+				E972EA341A4844C600476949 /* CoreGraphics.framework */,
+				E972EA321A4844BE00476949 /* Foundation.framework */,
+				E972EA2E1A48448F00476949 /* MediaPlayer.framework */,
+				E972EA2C1A48448400476949 /* QuartzCore.framework */,
+				E972EA2A1A48447D00476949 /* CoreVideo.framework */,
+				E972EA281A48447600476949 /* AVFoundation.framework */,
+				E972EA261A48446E00476949 /* libsqlite3.dylib */,
+				E972EA241A48445B00476949 /* libz.dylib */,
+				E972EA221A48444B00476949 /* SystemConfiguration.framework */,
+				E972EA201A48444200476949 /* Security.framework */,
+				E972EA1E1A48443A00476949 /* MobileCoreServices.framework */,
+				E972EA1C1A48443100476949 /* CFNetwork.framework */,
+				E972EA1A1A48442900476949 /* AudioToolbox.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		F1A8167149765EE89A9D811E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				973A86C173C5CCE9B1BE5334 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +293,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E972E9F31A48433E00476949 /* Build configuration list for PBXNativeTarget "Xketch2" */;
 			buildPhases = (
+				A8A4E45BFBEB7E4211B91972 /* Check Pods Manifest.lock */,
 				E972E9CC1A48433E00476949 /* Sources */,
 				E972E9CD1A48433E00476949 /* Frameworks */,
 				E972E9CE1A48433E00476949 /* Resources */,
+				80AC8A1AB3CCAC5BC5A5E690 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -168,6 +337,7 @@
 				TargetAttributes = {
 					E972E9CF1A48433E00476949 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = ADPWP9D9KM;
 					};
 					E972E9E81A48433E00476949 = {
 						CreatedOnToolsVersion = 6.1;
@@ -182,6 +352,7 @@
 			knownRegions = (
 				en,
 				Base,
+				he,
 			);
 			mainGroup = E972E9C71A48433E00476949;
 			productRefGroup = E972E9D11A48433E00476949 /* Products */;
@@ -214,14 +385,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		80AC8A1AB3CCAC5BC5A5E690 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8A4E45BFBEB7E4211B91972 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E972E9CC1A48433E00476949 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E972E9DC1A48433E00476949 /* ViewController.m in Sources */,
+				E972EA0D1A4843B200476949 /* IQProjectVideo.m in Sources */,
+				E972EA121A4843B200476949 /* QTouchposeApplication.m in Sources */,
+				E972EA131A4843B200476949 /* RecordUtil.m in Sources */,
+				E972EA101A4843B200476949 /* PagingScrollView.m in Sources */,
+				E972EA161A4843B200476949 /* XMLParser.m in Sources */,
+				E9A763941A4BB82800A143C3 /* PrototypeTableViewCell.m in Sources */,
 				E972E9D91A48433E00476949 /* AppDelegate.m in Sources */,
+				E972EA0E1A4843B200476949 /* LoadFileViewController.m in Sources */,
+				E97502281A4E7E3900F453DA /* FBLoginViewController.m in Sources */,
+				E972EA151A4843B200476949 /* TableViewWithTextArray.m in Sources */,
+				E972EA0F1A4843B200476949 /* OriginalViewController.m in Sources */,
+				E972EA141A4843B200476949 /* SegmentedControl+ImageVIew.m in Sources */,
 				E972E9D61A48433E00476949 /* main.m in Sources */,
+				E972EA111A4843B200476949 /* PickerViewWithTextArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,21 +556,43 @@
 		};
 		E972E9F41A48433E00476949 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6965C7163322B6A9301E6F64 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/blackzid/Desktop/IUI_Project/Xketch-Testing",
+					"$(PROJECT_DIR)",
+					/Users/blackzid/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Xketch2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		E972E9F51A48433E00476949 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E620714651AF8779AB461479 /* Pods.release.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/blackzid/Desktop/IUI_Project/Xketch-Testing",
+					"$(PROJECT_DIR)",
+					/Users/blackzid/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Xketch2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -412,6 +649,7 @@
 				E972E9F51A48433E00476949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E972E9F61A48433E00476949 /* Build configuration list for PBXNativeTarget "Xketch2Tests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +658,7 @@
 				E972E9F81A48433E00476949 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
